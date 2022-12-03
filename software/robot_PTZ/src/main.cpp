@@ -176,8 +176,10 @@ static esp_err_t command_handler(httpd_req_t *req) {
 
     }
     else if (!strcmp(content, "init")) {
-        level_servo.write(0);
-        vertical_servo.write(0);
+        level_val = 0;
+        vertical_val = 0;
+        level_servo.write(level_val);
+        vertical_servo.write(vertical_val);
     }
 
 
